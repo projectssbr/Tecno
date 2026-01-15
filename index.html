@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECNOMAXIMO - Pintura Airless Profissional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Nova Paleta de Cores Focada em Verde Escuro e Neutros */
+            --verde-primario: #1b5e20;   /* Verde forte */
+            --verde-escuro: #0a330c;     /* Verde profundo para contraste */
+            --amarelo-destaque: #fdd835;  /* Amarelo para botões e links */
+            --amarelo-hover: #fbc02d;
+            --preto: #121212;
+            --cinza-escuro: #333333;
+            --cinza-claro: #f4f4f4;
+            --branco: #ffffff;
+            --whatsapp-color: #25d366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--cinza-escuro);
+            background-color: var(--branco);
+        }
+
+        /* HEADER */
+        header {
+            background-color: var(--verde-escuro);
+            color: var(--branco);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--amarelo-destaque);
+        }
+
+        .logo { font-size: 1.4rem; color: var(--amarelo-destaque); }
+
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        nav ul li a:hover { color: var(--amarelo-destaque); }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(rgba(10, 51, 12, 0.8), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1589939705384-5185138a04b9?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--branco);
+            text-align: center;
+            padding: 120px 10%;
+        }
+
+        .hero h2 { font-size: 2.8rem; margin-bottom: 15px; color: var(--amarelo-destaque); }
+        .hero p { font-size: 1.3rem; margin-bottom: 30px; }
+
+        /* SEÇÕES GERAIS */
+        section { padding: 80px 10%; }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--verde-escuro);
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+
+        /* MÁQUINAS */
+        .machine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .machine-card {
+            background: var(--branco);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            border-bottom: 5px solid var(--verde-primario);
+            transition: 0.3s;
+        }
+        .machine-card:hover { transform: translateY(-5px); }
+        .machine-card img { width: 100%; height: 200px; object-fit: cover; }
+        .machine-card p { padding: 15px; text-align: center; font-weight: bold; color: var(--verde-escuro); }
+
+        /* SERVIÇOS */
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .service-box {
+            padding: 40px;
+            background: var(--verde-primario);
+            color: var(--branco);
+            border-radius: 8px;
+            text-align: center;
+            transition: 0.3s;
+            border-bottom: 4px solid var(--amarelo-destaque);
+        }
+        .service-box:hover { background: var(--verde-escuro); transform: scale(1.02); }
+        .service-box h4 { color: var(--amarelo-destaque); margin-bottom: 10px; }
+
+        /* LOCALIZAÇÃO */
+        .map-container {
+            width: 100%;
+            height: 400px;
+            background: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid var(--verde-escuro);
+        }
+
+        /* WHATSAPP SPACE */
+        .cta-whatsapp {
+            background-color: var(--verde-escuro);
+            text-align: center;
+            padding: 60px 10%;
+            color: var(--branco);
+        }
+        .cta-whatsapp h3 { color: var(--amarelo-destaque); font-size: 1.8rem; margin-bottom: 15px; }
+
+        .btn-cta {
+            background-color: var(--amarelo-destaque);
+            color: var(--preto);
+            padding: 18px 45px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            display: inline-block;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .btn-cta:hover { background-color: var(--amarelo-hover); box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+
+        footer { background: var(--preto); color: #888; text-align: center; padding: 30px; border-top: 2px solid var(--verde-escuro); }
+
+        .float-ws {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp-color);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 30px;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; }
+            nav ul { margin-top: 15px; }
+            nav ul li { margin: 0 10px; }
+            .hero h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">TECNOMAXIMO</div>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#empresa">Sobre</a></li>
+            <li><a href="#equipamentos">Equipamentos</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#onde estamos">Onde Estamos</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero" id="inicio">
+    <h2>Venda de Maquinários de Pintura Airless e Lixamento de Alta Performance.</h2>
+    <p>A Melhor Tecnologia para a sua obra.</p>
+    <a href="https://wa.me/16993485592" class="btn-cta">Solicitar Orçamento</a>
+</section>
+
+<section id="empresa">
+    <h3 class="section-title">Nossa Empresa</h3>
+    <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 1.3rem; line-height: 1.8;">
+           Com mais de 10 anos de experiência, a <strong>TECNOMAXIMO</strong> é referência em Ribeirão Preto e região, oferecendo excelência na venda de maquinários de pintura e serviços especializados de conserto para garantir a máxima performance da sua obra.
+        </p>
+    </div>
+</section>
+
+</script><section id="equipamentos" style="background-color: var(--cinza-claro);">
+    <h3 class="section-title">Maquinários e Tecnologia</h3>
+    <div class="machine-grid">
+        <div class="machine-card">
+            <img src="https://via.placeholder.com/400x300?text=Airless+Industrial" alt="Equipamento Airless">
+            <p>Lixadeiras de massa ou gesso</p>
+        </div>
+        <div class="machine-card">
+            <img src="https://via.placeholder.com/400x300?text=Conserto+Tecnico" alt="Manutenção">
+            <p>Airless e Misturador de Tinta</p>
+        </div>
+        <div class="machine-card">
+            <img src="https://via.placeholder.com/400x300?text=Peças+Reposição" alt="Peças">            
+            <p>Peças de Máquinas</p>
+        </div>
+        <div class="machine-card">
+            <img src="https://via.placeholder.com/400x300?text=Suporte" alt="Suporte">
+            <p>Acessórios</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="servicos">
+    <h3 class="section-title">Serviços e Consertos</h3>
+    <div class="services-container">
+        <div class="service-box">
+            <h4>Consertos de Lixadeiras</h4>
+            <p> Temos Todas as peças de reposição de lixadeira, do carvão até o motor.</p>
+        </div>
+        <div class="service-box">
+            <h4>Consertos de Airless</h4>
+            <p>Análise e conserto de máquinas de pistão ou diafragma.</p>
+        </div>
+        <div class="service-box">
+            <h4>Centro Comercial</h4>
+            <p>Ajudamos você a comprar a melhor máquina para sua obra.</p>
+        </div> </div>
+</section>
+
+</script><section id="equipamentos" style="background-color: var(--cinza-claro);">
+
+    </div>
+</section>
+<section id="onde estamos">
+    <h3 class="section-title">Onde Estamos</h3>
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps?q=TECNOMAXIMO,Rua+João+Bim,1236,Ribeirão+Preto&output=embed" 
+            width="100%" 
+            height="400" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    <div style="text-align: center; margin-top: 25px;">
+        <p style="font-size: 1.2rem; color: var(--verde-escuro);">
+            <strong>Rua João Bim, 1236 - Jardim Paulistano</strong>
+        </p>
+        <p>Ribeirão Preto - SP | (16) 99348-5592</p>
+    </div>
+</section>
+  
+<section class="cta-whatsapp">
+    <h3>Precisa de agilidade e qualidade na sua obra?</h3>
+    <p style="margin-bottom: 25px;">Fale agora conosco e peça seu orçamento.</p>
+    <a href="https://wa.me/16993485592" class="btn-cta">Solicitar orçamento via whatsapp</a>
+</section>
+
+<footer>
+    <p>© 2026 TECNOMAXIMO</p>
+</footer>
+
+<a href="https://wa.me/16993485592" class="float-ws" target="_blank">
+    <span>💬</span>
+</a>
+
+</body>
+</html>
